@@ -2,3 +2,22 @@ body{
   background: beige;
 }
 
+h1{
+  color: black;
+}
+
+.redColor{
+  color: red;
+}
+
+.pinkColor{
+  color: deeppink;
+}
+
+.blueColor{
+  color: cornflowerblue;
+}
+
+.h{
+  font-family:-apple-system;
+}

@@ -1,3 +1,4 @@
+/*
 //#3.1에서 배운 내용
 
 //const TITLE = document.getElementById("title");
@@ -30,16 +31,37 @@
 
 
 // https://developer.mozilla.org/ko/docs/Web/API/HTMLElement
+*/
 
 const H1TITLE = document.querySelector(".hello:first-child h1");
 
 //console.dir(H1TITLE);
 
 //html요소의 속성을 바꿀 수 있다.
-H1TITLE.style.color = "black"
+//H1TITLE.style.color = "black"
 
 function handleTitleClick() {
-  const CURRENTCOLOR = H1TITLE.style.color;
+  const H1CLASS = H1TITLE.className;
+  const RED = "redColor";
+  const PINK = "pinkColor";
+  const BLUE = "blueColor";
+  let newClass;
+  
+  if(H1TITLE.classList.contains(RED)){
+    newClass = PINK;
+    H1TITLE.innerText = "핑크색! 다시 누르면 또 바껴!!👻👻";
+  }else if(H1CLASS === PINK){
+    newClass = BLUE;
+    H1TITLE.innerText = "파란색! 다시 누르면 또 바껴!!🤩";
+  }else{
+    newClass = RED;
+    H1TITLE.innerText = "빨간색! 다시 누르면 또 바껴!!🍉";
+  }
+
+  H1TITLE.className = newClass;
+  console.log(H1TITLE.className);
+        
+  /*const CURRENTCOLOR = H1TITLE.style.color;
   if(CURRENTCOLOR === "black"||CURRENTCOLOR === "blue"){
     newColor = "red";
     H1TITLE.innerText = "빨간색! 다시 누르면 또 바껴!!🐵";
@@ -52,7 +74,8 @@ function handleTitleClick() {
   }
 
   H1TITLE.style.color = newColor
-  console.log(H1TITLE.style.color);
+  //console.log(H1TITLE.style.color);
+  */
 }
 
 /*
