@@ -33,16 +33,29 @@
 
 const H1TITLE = document.querySelector(".hello:first-child h1");
 
-console.dir(H1TITLE);
+//console.dir(H1TITLE);
 
 //html요소의 속성을 바꿀 수 있다.
-//TITLE.style.color = "blue"
+H1TITLE.style.color = "black"
 
 function handleTitleClick() {
-  console.log("title was cliked!!");
-  H1TITLE.innerText = "굳👍🏻 ⤵️핸드폰 가로로 돌려봐⤵️ ";
+  const CURRENTCOLOR = H1TITLE.style.color;
+  if(CURRENTCOLOR === "black"||CURRENTCOLOR === "blue"){
+    newColor = "red";
+    H1TITLE.innerText = "빨간색! 다시 누르면 또 바껴!!🐵";
+  }else if(CURRENTCOLOR === "red"){
+    newColor = "pink";
+    H1TITLE.innerText = "핑크색! 다시 누르면 또 바껴!!👻👻";
+  }else{
+    newColor = "blue";
+    H1TITLE.innerText = "파란색! 다시 누르면 또 바껴!!🤩";
+  }
+
+  H1TITLE.style.color = newColor
+  console.log(H1TITLE.style.color);
 }
 
+/*
 function handleMouseEnter() {
   H1TITLE.innerText = "Mouse is Here!"  ;
 }
@@ -67,17 +80,19 @@ function handleWindowOffline() {
 function handleWindowOnline() {
   alert("😎굳 이제 끝!😎")
 }
+*/
+
 //함수를 넣을 때 괄호는 넣으면 안됌. 왜냐면 함수만 넘겨주면, 클릭했을 때, 괄호가 부여되는 방식이라 생각하면 편함
 
 H1TITLE.addEventListener("click", handleTitleClick);
 //TITLE.onclick = handleTitleClick; 이것도 위의 함수와 동일함
 //addEventListener 함수가 더 좋은 이유는 .removeEventListener 함수를 쓸 수 있어서!!
 
-H1TITLE.addEventListener("mouseenter", handleMouseEnter);
-H1TITLE.addEventListener("mouseleave", handleMouseLeave);
+//H1TITLE.addEventListener("mouseenter", handleMouseEnter);
+//H1TITLE.addEventListener("mouseleave", handleMouseLeave);
 
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
+//window.addEventListener("resize", handleWindowResize);
+//window.addEventListener("copy", handleWindowCopy);
 
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
+//window.addEventListener("offline", handleWindowOffline);
+//window.addEventListener("online", handleWindowOnline);
