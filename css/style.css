@@ -1,0 +1,16 @@
+body{
+  background: beige;
+}
+h1,h2, span{
+  font-family:-apple-system;
+}
+
+img{
+  position:
+  height: 100vh;
+  width: 100vw;
+}
+
+.hidden{
+  display: none;
+}
