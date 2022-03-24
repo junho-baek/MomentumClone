@@ -28,6 +28,6 @@ h1,h2, span{
   transform:translate(-50%, -50%);
   border-radius:100px;
   padding:70px;
-  overflow: scroll
+  
 
 }
