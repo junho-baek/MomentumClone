@@ -2,6 +2,8 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector("#greeting");
 
+const greetingBox = document.querySelector("#greeting-box");
+
 const toDoForm1 = document.querySelector("#todo-form");
 const toDoInput1 = toDoForm1.querySelector("input");
 const toDoList1 = document.getElementById("todo-list");
@@ -21,6 +23,7 @@ function onLoginSubmit(event){
   toDoInput1.classList.remove(HIDDEN_CLASSNAME);
   toDoList1.classList.remove(HIDDEN_CLASSNAME);
   toDobox1.classList.remove(HIDDEN_CLASSNAME);
+  greetingBox.classList.remove(HIDDEN_CLASSNAME);
   const username = loginInput.value;
   localStorage.setItem(USERNAME_KEY, username);
   
@@ -47,6 +50,7 @@ if(localStorage.getItem(USERNAME_KEY)=== null){
   toDoInput1.classList.remove(HIDDEN_CLASSNAME);
   toDoList1.classList.remove(HIDDEN_CLASSNAME);
   toDobox1.classList.remove(HIDDEN_CLASSNAME);
+  greetingBox.classList.remove(HIDDEN_CLASSNAME);
 }
 
 

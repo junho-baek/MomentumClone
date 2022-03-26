@@ -29,7 +29,7 @@ const quotes = [
      author: "-Mae West-",
    },
    {
-     quote: "Never go on trips with anyone you do ntot love.",
+     quote: "Never go on trips with anyone you do not love.",
      author: "-Hemmingway-",
    },
    {
@@ -39,10 +39,6 @@ const quotes = [
    {
      quote: "Travel expands the mind and fills the gap.",
      author: "-Sheda Savage-",
-   },
-  {
-     quote: "2시 17분의 정신이라면 못할 것도 없다",
-     author: "--",
    },
  ];
 

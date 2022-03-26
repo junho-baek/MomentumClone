@@ -22,24 +22,29 @@
 
     <form id="login-form" class="hidden">
       <div id="hello-box">
-        <span id="hello">Hello, What's your name?</span>
-        <input required maxlength="15" type="text" placeholder="이름이 뭐에요?😀" />
-        <input type="submit" value="Log-In" />
+        <div id="hello-box2">
+          <span id="hello"><b>Hello, What's your name?</b></span>
+          <input required maxlength="15" type="text"/>
+          <input type="submit" class="hidden" value="Log-In" />
+        </div>
       </div>
     </form>
 
-
+<div id="greeting-box" class="hidden">
+  <div id="greeting-box2">
     <h1 id="greeting" class="hidden"></h1>
     
 
-    <form id="todo-form" class="hidden">
-      <input type="text" placeholder="계획을 작성해보세요📔"/>  
-      <input type="submit" value="추가" />
+    <form id="todo-form"  class="hidden">
+      <input type="text" maxlength="30" placeholder="Add to-do List!"/>  
     </form>
  
-<div id="todo-box" class="hidden">
-    <ul id="todo-list" class="hidden"></ul>
+    <div id="todo-box" class="hidden">
+      <ul id="todo-list" class="hidden"></ul>
+    </div>
+  </div>
 </div>
+    
 
   
      <div id="quote">
