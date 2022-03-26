@@ -8,30 +8,45 @@
   </head>
   <body>
 
-
-<div class="entire">
+  <div class="time">
     <h2 id="date">0000년 00월 00일</h2>
-    <h2 id="clock">00:00</h2>    
+    <h2 id="clock">00:00</h2>
+  </div>
+
+    
+
+
+
+
+
+
     <form id="login-form" class="hidden">
-      <input required maxlength="15" type="text" placeholder="이름이 뭐에요?😀" />
-      <input type="submit" value="Log In" />
+      <div id="hello-box">
+        <span id="hello">Hello, What's your name?</span>
+        <input required maxlength="15" type="text" placeholder="이름이 뭐에요?😀" />
+        <input type="submit" value="Log-In" />
+      </div>
     </form>
 
 
     <h1 id="greeting" class="hidden"></h1>
     
 
-    <form id="todo-form">
-      <input type="text" placeholder="계획을 작성해보세요📔"/>   </form>
+    <form id="todo-form" class="hidden">
+      <input type="text" placeholder="계획을 작성해보세요📔"/>  
+      <input type="submit" value="추가" />
+    </form>
  
+<div id="todo-box" class="hidden">
+    <ul id="todo-list" class="hidden"></ul>
+</div>
 
-    <ul id="todo-list"></ul>
-
+  
      <div id="quote">
        <span></span>
        <span></span>
       </div>
-</div>
+
 
      
     

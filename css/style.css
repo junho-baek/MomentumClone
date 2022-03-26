@@ -1,3 +1,6 @@
+@import "variables.css";
+
+
 img {
     /* viewport 기준으로 위치가 결정된다. */
     position: fixed;
@@ -11,23 +14,158 @@ img {
 h1,h2, span{
   font-family:-apple-system;
   z-index:2;
-  color:whitesmoke;
+  color:#ffffff;
 }
+
+
+
+
+
+
+
+
+.time{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+  position:absolute;
+  left:50%; 
+  top:20%;
+  transform:translate(-50%, -80%);
+  height:30%;
+  width:100%;
+
+  
+
+}
+
+
+#date{
+  font-size: 400%;
+  margin: 0
+}
+#clock{
+  font-size: 300%;
+  margin: 0
+}
+
+
+
+#login-form input{
+  border: none;
+}
+
+#hello{
+  height:10%;
+  width:100%;
+  font-size:50px;
+  position:absolute;
+  left:50%; 
+  top:45%;
+  transform:translate(-50%, -55%);
+  text
+}
+
+#login-form input:not([type="submit"]){
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+  transition: border-color 0.3s ease-in-out;
+  font-size: 18px;
+  width:75%;
+  height:5%;
+  background-color: rgba(0, 0, 0, 0);
+  position:absolute;
+  left:50%; 
+  top:55%;
+  transform:translate(-50%, -45%);
+}
+#login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.88);
+}
+#login-form input[type="submit"] {
+  background-color: rgba(0, 0, 0, 0.2)
+  cursor: pointer;
+  padding: 2px 0px;
+  border-radius: 5px;
+  
+  font-size: 12px;
+  width:10%;
+  height:5%;
+  position:absolute;
+  left:50%; 
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+#greeting{
+
+  background-color: rgba(0, 0, 0, 0.2);
+  position:absolute;
+  left:50%; 
+  top:35%;
+  transform:translate(-50%, -65%);
+  border-radius:5px;
+}
+
+#todo-form{
+  position:absolute;
+  left:50%; 
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+#todo-form input:not([type="submit"]){
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease-in-out;
+  font-size: 18px;
+  width:60%;
+  height:5%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#todo-form input::placeholder {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+
+#quote{
+  position:absolute;
+  left:50%; 
+  top:95%;
+  transform:translate(-50%, -5%);
+  background:rgba(0,0,0,0.2);
+  width:80%;
+}
+
+#todo-box{
+  position:absolute;
+  left:50%; 
+  top:65%;
+  transform:translate(-50%, -35%);
+  background-color: rgba(0,0,0,0.4);
+  height: 30%;
+  width:80%;
+  overflow: auto;
+}
+
 
 
 
 .hidden{
   display: none;
+
 }
 
-.entire{
-  background:rgba(0,0,0,0.5);
-  position:absolute;
-  left:50%; 
-  top:50%;
-  transform:translate(-50%, -50%);
-  border-radius:100px;
-  padding:70px;
+button{
+  margin-left:5px;
   
-
+  height:20px;
+  width: 20px;
+  border-radius:10px;
+  font-size: 7px;
+  background-color: rgb(255,255,255,0.9);
+  text-align: center;
+  padding: 4.5px 4.5px;
+  border: none;
 }
