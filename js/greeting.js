@@ -15,19 +15,19 @@ const logoImg = document.querySelector('#logo');
 
 const link = document.querySelector("a");
 const todoBtn = document.getElementById("todoBtn");
-
+const quoteBox = document.getElementById("quote");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
 
-function onLoginSubmit(event){
+function onLoginSubmit(event) {
 
   event.preventDefault();
   loginForm.classList.add(HIDDEN_CLASSNAME);
   toDoForm1.classList.remove(HIDDEN_CLASSNAME);
   toDoInput1.classList.remove(HIDDEN_CLASSNAME);
-  toDoList1.classList.remove(HIDDEN_CLASSNAME);
+  quoteBox.classList.remove(HIDDEN_CLASSNAME); toDoList1.classList.remove(HIDDEN_CLASSNAME);
   // toDobox1.classList.remove(HIDDEN_CLASSNAME);
   greetingBox.classList.remove(HIDDEN_CLASSNAME);
   todoBtn.classList.remove(HIDDEN_CLASSNAME);
@@ -35,44 +35,44 @@ function onLoginSubmit(event){
   localStorage.setItem(USERNAME_KEY, username);
   clockBox.classList.remove(HIDDEN_CLASSNAME);
   logoImg.classList.add(HIDDEN_CLASSNAME);
-  
+
   greetingFunction(username);
 }
 
 function greetingFunction(user) {
-  
-  
-    const date = new Date();
-  if(date.getHours() >=18||date.getHours()<5){
+
+
+  const date = new Date();
+  if (date.getHours() >= 18 || date.getHours() < 5) {
     const a = "Good evening"
     greeting.innerText = `${a}, ${user}.`;
-  }else if(date.getHours() >= 12){
+  } else if (date.getHours() >= 12) {
     const a = "Good afternoon"
     greeting.innerText = `${a}, ${user}.`;
-  }else{
+  } else {
     const a = "Good morning"
     greeting.innerText = `${a}, ${user}.`;
   }
-  
+
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 
-loginForm.addEventListener("submit", onLoginSubmit );
+loginForm.addEventListener("submit", onLoginSubmit);
 
 const savedUser = localStorage.getItem(USERNAME_KEY);
 
-if(localStorage.getItem(USERNAME_KEY)=== null){
+if (localStorage.getItem(USERNAME_KEY) === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
-  loginForm.addEventListener("submit", onLoginSubmit );
-}else{
+  loginForm.addEventListener("submit", onLoginSubmit);
+} else {
   greetingFunction(savedUser);
   toDoForm1.classList.remove(HIDDEN_CLASSNAME);
   toDoInput1.classList.remove(HIDDEN_CLASSNAME);
   toDoList1.classList.remove(HIDDEN_CLASSNAME);
   // toDobox1.classList.remove(HIDDEN_CLASSNAME);
   greetingBox.classList.remove(HIDDEN_CLASSNAME);
-  clockBox.classList.remove(HIDDEN_CLASSNAME);
+  quoteBox.classList.remove(HIDDEN_CLASSNAME); clockBox.classList.remove(HIDDEN_CLASSNAME);
   logoImg.classList.add(HIDDEN_CLASSNAME);
   todoBtn.classList.remove(HIDDEN_CLASSNAME);
 }

@@ -1,142 +1,113 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>계획표</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          fontFamily: {
-            sans: ["-apple-system", "ui-sans-serif", "system-ui"]
-          }
-        }
-      };
-    </script>
-  </head>
 
-  <body
-    class="select-none h-screen flex flex-col bg-no-repeat bg-cover bg-center"
-  >
-    <div class="w-full h-1/6 flex items-center">
-      <img
-        id="logo"
-        src="img/logo-white.svg"
-        class="h-[35%] slelect-none sm:h-1/2 w-auto mb-10 mx-auto"
-      />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>계획표</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: ["-apple-system", "ui-sans-serif", "system-ui"]
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="select-none h-screen flex flex-col bg-no-repeat bg-cover bg-center">
+  <div class="w-full h-1/6 flex items-center">
+    <img id="logo" src="img/logo-white.svg" class="h-[35%] slelect-none sm:h-1/2 w-auto mb-10 mx-auto" />
+  </div>
+
+  <div class="flex flex-col items-center w-full h-3/5 relative">
+    <div id="clock-box"
+      class="time flex flex-col text-white items-center max-w-sm mx-auto bg-[rgba(0,0,0,0)] mt-[9.44px] hidden font-sans">
+      <!--       <h2 class="mx-auto text-blue-400" id="date">0000년 00월 00일</h2> -->
+      <h2 class="mx-auto text-6xl font-normal" id="clock">
+        00:00
+      </h2>
+      <h2 class="mxㅇ-auto texㅇt-6xl font-normal hidden" id="clock12">
+        00:00
+      </h2>
+      <h1 id="greeting" class="hidden font-normal text-[26px]"></h1>
     </div>
 
-    <div class="flex flex-col items-center w-full h-3/5 relative">
-      <div
-        id="clock-box"
-        class="time flex flex-col text-white items-center max-w-sm mx-auto bg-[rgba(0,0,0,0)] mt-[9.44px] hidden font-sans"
-      >
-        <!--       <h2 class="mx-auto text-blue-400" id="date">0000년 00월 00일</h2> -->
-        <h2 class="mx-auto text-6xl font-normal" id="clock">
-          00:00
-        </h2>
-        <h2 class="mx-auto text-6xl font-normal hidden" id="clock12">
-          00:00
-        </h2>
-        <h1 id="greeting" class="hidden font-normal text-[26px]"></h1>
-      </div>
-
-      <!-- 로그인부분(완료) -->
-      <form id="login-form" class="hidden absolute top-1/4">
-        <div
-          id="hello-box"
-          class="flex flex-col font-medium text-black items-center p-6 max-w-full mx-auto space-x-6"
-        >
-          <div
-            id="hello-box2"
-            class="relative font-basic text-white text-[28px] sm:text-[56px] pt-12 sm:pt-8"
-          >
-            <div
-              class="flex flex-col w-full h-full justify-around pt-8 items-center"
-            >
-              <span id="hello" class="text-center"
-                >Hello, What's your name?</span
-              >
-              <input
-                class="border-b-4 border-white/90 bg-[rgba(1,1,1,0)] mx-1/4 w-[95%] text-white text-center"
-                required
-                maxlength="15"
-                type="text"
-              />
-              <button
-                class="border-2 border-white/70 text-white text-sm rounded-full px-4 py-1 mt-6 flex gap-2 sm:px-5 sm:py-2 sm:mt-8 hover:shadow-inner hover:shadow-white/50 active:bg-white/60"
-              >
-                Continue
-                <svg
-                  data-v-28e1c6fc=""
-                  viewBox="0 0 289.04 492"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="fill-white rotate-180 h-3 w-4 mt-1"
-                >
-                  <path
-                    xmlns="http://www.w3.org/2000/svg"
-                    d="M198.61,246.1,382.66,62a27,27,0,0,0,0-38.06L366.54,7.86a27,27,0,0,0-38.06,0L109.33,227a27.15,27.15,0,0,0,0,38.19L328.27,484.14a27,27,0,0,0,38.07,0L382.46,468a27,27,0,0,0,0-38.06Z"
-                    transform="translate(-101.48)"
-                  ></path>
-                </svg>
-              </button>
-            </div>
+    <!-- 로그인부분(완료) -->
+    <form id="login-form" class="hidden absolute top-1/4">
+      <div id="hello-box" class="flex flex-col font-medium text-black items-center p-6 max-w-full mx-auto space-x-6">
+        <div id="hello-box2" class="relative font-basic text-white text-[28px] sm:text-[56px] pt-12 sm:pt-8">
+          <div class="flex flex-col w-full h-full justify-around pt-8 items-center">
+            <span id="hello" class="text-center">Hello, What's your name?</span>
+            <input class="border-b-4 border-white/90 bg-[rgba(1,1,1,0)] mx-1/4 w-[95%] text-white text-center" required
+              maxlength="15" type="text" />
+            <button
+              class="border-2 border-white/70 text-white text-sm rounded-full px-4 py-1 mt-6 flex gap-2 sm:px-5 sm:py-2 sm:mt-8 hover:shadow-inner hover:shadow-white/50 active:bg-white/60">
+              Continue
+              <svg data-v-28e1c6fc="" viewBox="0 0 289.04 492" xmlns="http://www.w3.org/2000/svg"
+                class="fill-white rotate-180 h-3 w-4 mt-1">
+                <path xmlns="http://www.w3.org/2000/svg"
+                  d="M198.61,246.1,382.66,62a27,27,0,0,0,0-38.06L366.54,7.86a27,27,0,0,0-38.06,0L109.33,227a27.15,27.15,0,0,0,0,38.19L328.27,484.14a27,27,0,0,0,38.07,0L382.46,468a27,27,0,0,0,0-38.06Z"
+                  transform="translate(-101.48)"></path>
+              </svg>
+            </button>
           </div>
         </div>
-      </form>
-
-      <!-- 메인 포커스 및 투두박스 작업 -->
-      <div id="greeting-box" class="hidden relative">
-        <div id="greeting-box2"></div>
       </div>
+    </form>
 
-      <div id="quote" class="hidden">
-        <span></span>
-        <span></span>
+    <!-- 메인 포커스 및 투두박스 작업 -->
+    <div id="greeting-box" class="hidden relative flex flex-col justify-around item-center">
+      <div id="greeting-box2">
+        <form class="flex flex-col justify-around item-center mt-[90%]">
+          <span class="text-white text-xl mx-auto text-center">What is your main focus for today?</span>
+          <input
+            class="border-b-2 border-white/90 bg-[rgba(1,1,1,0)] mx-auto w-[93%] text-white text-center text-2xl text-center"
+            required maxlength="15" type="text" />
+        </form>
+
       </div>
     </div>
-    <div class="w-full h-1/5 relative">
-      <div
-        id="todo-box"
-        class="hidden bg-white absolute bottom-1 right-1 pr-2 pl-4 pb-4 pt-2 w-[95%] rounded-lg z-40"
-      >
-        <div class="relative">
-          <span class="text-xl">Today</span>
-          <span
-            id="xBtn"
-            class="absolute top-0 right-1 flex h-[30px] w-[30px] bg-gray-100 rounded-full p-[0.67rem] active:bg-gray-200 font-sm"
-          >
-            <svg
-              class="icon icon-hide fill-gray-600"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 348.333 348.334"
-            >
-              <path
-                d="M336.559 68.611L231.016 174.165l105.543 105.549c15.699 15.705 15.699 41.145 0 56.85-7.844 7.844-18.128 11.769-28.407 11.769-10.296 0-20.581-3.919-28.419-11.769L174.167 231.003 68.609 336.563c-7.843 7.844-18.128 11.769-28.416 11.769-10.285 0-20.563-3.919-28.413-11.769-15.699-15.698-15.699-41.139 0-56.85l105.54-105.549L11.774 68.611c-15.699-15.699-15.699-41.145 0-56.844 15.696-15.687 41.127-15.687 56.829 0l105.563 105.554L279.721 11.767c15.705-15.687 41.139-15.687 56.832 0 15.705 15.699 15.705 41.145.006 56.844z"
-              ></path>
-            </svg>
-          </span>
-        </div>
-        <div><ul id="todo-list" class="hidden"></ul></div>
-        <div>
-          <form id="todo-form" class="hidden">
-            <input type="text" maxlength="30" placeholder="New Todo" />
-          </form>
-        </div>
-      </div>
-      <span
-        id="todoBtn"
-        class="hidden font-semibold text-white absolute bottom-1 right-1 p-4"
-        >Todo</span
-      >
-    </div>
 
-    <script src="js/greeting.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
-    <script src="js/todo.js"></script>
-  </body>
+
+  </div>
+  <div class="w-full h-1/5 relative flex flex-col item-center justify-around p-8">
+    <div id="quote" class="hidden flex flex-col items-center justify-around text-white">
+      <span class="text-lg italic text-center"></span>
+      <span class="text-sm"></span>
+    </div>
+    <div id="todo-box" class="hidden bg-white absolute bottom-1 right-1 pr-2 pl-4 pb-4 pt-2 w-[95%] rounded-lg z-40">
+      <div class="relative">
+        <span class="text-xl">Today</span>
+        <span id="xBtn"
+          class="absolute top-0 right-1 flex h-[30px] w-[30px] bg-gray-100 rounded-full p-[0.67rem] active:bg-gray-200 font-sm">
+          <svg class="icon icon-hide fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.333 348.334">
+            <path
+              d="M336.559 68.611L231.016 174.165l105.543 105.549c15.699 15.705 15.699 41.145 0 56.85-7.844 7.844-18.128 11.769-28.407 11.769-10.296 0-20.581-3.919-28.419-11.769L174.167 231.003 68.609 336.563c-7.843 7.844-18.128 11.769-28.416 11.769-10.285 0-20.563-3.919-28.413-11.769-15.699-15.698-15.699-41.139 0-56.85l105.54-105.549L11.774 68.611c-15.699-15.699-15.699-41.145 0-56.844 15.696-15.687 41.127-15.687 56.829 0l105.563 105.554L279.721 11.767c15.705-15.687 41.139-15.687 56.832 0 15.705 15.699 15.705 41.145.006 56.844z">
+            </path>
+          </svg>
+        </span>
+      </div>
+      <div>
+        <ul id="todo-list" class="hidden"></ul>
+      </div>
+      <div>
+        <form id="todo-form" class="hidden">
+          <input type="text" maxlength="30" placeholder="New Todo" />
+        </form>
+      </div>
+    </div>
+    <span id="todoBtn" class="hidden font-semibold text-white absolute bottom-0 right-0 p-4">Todo</span>
+  </div>
+
+  <script src="js/greeting.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/todo.js"></script>
+</body>
+
 </html>
