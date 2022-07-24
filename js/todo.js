@@ -68,6 +68,8 @@ function completeToDo(event) {
     saveCompleteToDos();
   }
 }
+
+
 function paintMiddleLine(comTodo) {
   const li = document.getElementById(comTodo.id);
   // const span = li.querySelector("span");
@@ -83,7 +85,7 @@ function paintMiddleLine(comTodo) {
 function editTodos(event) {
   event.preventDefault();
   console.log(event);
-  const li = event.path[1];
+  const li = event.target.parentElement  
   const form = li.querySelector("form");
   const input = form.querySelector("input");
   // input.disabled = true;
@@ -106,15 +108,10 @@ function editTodos(event) {
 
   saveToDos();
 
-  //삭제
-  // toDos = toDos.filter((element) => element.id !== parseInt(li.id));
-  // console.log(li.id);
-  // completeDos = completeDos.filter((e) => e.id !== parseInt(li.id));
-
-  // saveToDos();
-  // saveCompleteToDos();
-  //추가
+  
 }
+
+
 function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.classList.add("flex", "h-6", "relative");
@@ -131,13 +128,22 @@ function paintToDo(newTodo) {
   input.value = newTodo.text;
   form.appendChild(input);
 
-  form.addEventListener("focusout", () => {
+  const b =document.createElement("button");
+  b.innerText = ""
+  form.appendChild(b);
+
+
+
+  
+  input.addEventListener("blur", () => {
     // form.submit() 이거랑 다르다!!!!!!!!!!
-    form.requestSubmit();
+    b.click()
+    // form.submit();
   });
+
   // form.onblur = () => {
   //   // form.submit() 이거랑 다르다!!!!!!!!!!
-  //   form.requestSubmit();
+  //   form.requestSubmit(); 이거 사파리에서 안되니까 쓰지마라잉
   // };
   form.addEventListener("submit", editTodos);
   // input.classList.add("line-through");
@@ -157,15 +163,21 @@ function paintToDo(newTodo) {
     "p-2",
     "rounded-lg",
     "gap-1",
-    "z-20"
+    "z-40"
   );
   const editBtn = document.createElement("button");
   editBtn.innerText = "Edit";
   editBtn.classList.add("border-b");
+
   editBtn.addEventListener("click", () => {
     input.readOnly = false;
     // input.disabled = false;
     input.autofocus = true;
+    input.focus();
+    form.focus();
+    button.blur();
+
+
   });
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "Delete";
@@ -185,9 +197,17 @@ function paintToDo(newTodo) {
     "absolute",
     "right-1"
   );
-  // button.addEventListener("click", () => {
-  //   select.classList.toggle("hidden");
-  // });
+
+  document.querySelector("body").addEventListener("click", () => {
+    button.blur;
+    input.blur;
+    form.blur;
+  })
+
+  button.addEventListener("click", () => {
+
+    button.focus()
+  });
   button.addEventListener("focus", () => {
     select.classList.remove("hidden");
   });
