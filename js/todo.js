@@ -69,14 +69,13 @@ function completeToDo(event) {
   }
 }
 
-
 function paintMiddleLine(comTodo) {
   const li = document.getElementById(comTodo.id);
   // const span = li.querySelector("span");
   const form = li.querySelector("form");
   const input = form.querySelector("input");
   const checkBox = li.querySelector("input");
-  if ((checkBox.checked = true)) {
+  if (checkBox.checked === true) {
     input.classList.add("line-through");
   } else {
     input.classList.remove("line-through");
@@ -85,7 +84,7 @@ function paintMiddleLine(comTodo) {
 function editTodos(event) {
   event.preventDefault();
   console.log(event);
-  const li = event.target.parentElement  
+  const li = event.target.parentElement;
   const form = li.querySelector("form");
   const input = form.querySelector("input");
   // input.disabled = true;
@@ -107,14 +106,11 @@ function editTodos(event) {
   }
 
   saveToDos();
-
-  
 }
-
 
 function paintToDo(newTodo) {
   const li = document.createElement("li");
-  li.classList.add("flex", "h-6", "relative");
+  li.classList.add("flex", "h-6", "relative", "item-center", "gap-1");
   li.id = newTodo.id;
   // const span = document.createElement("span");
   // span.innerText = newTodo.text;
@@ -123,21 +119,21 @@ function paintToDo(newTodo) {
   checkbox.addEventListener("click", completeToDo);
 
   const form = document.createElement("form");
+  form.classList.add("w-[80%]");
   const input = document.createElement("input");
+  input.classList.add("w-full");
   input.readOnly = true;
   input.value = newTodo.text;
+  input.maxLength = 40;
   form.appendChild(input);
 
-  const b =document.createElement("button");
-  b.innerText = ""
+  const b = document.createElement("button");
+  b.innerText = "";
   form.appendChild(b);
 
-
-
-  
   input.addEventListener("blur", () => {
     // form.submit() 이거랑 다르다!!!!!!!!!!
-    b.click()
+    b.click();
     // form.submit();
   });
 
@@ -150,6 +146,7 @@ function paintToDo(newTodo) {
   // button.innerText = "x";
   const button = document.createElement("button");
   const select = document.createElement("div");
+
   select.classList.add(
     "flex",
     "flex-col",
@@ -165,6 +162,7 @@ function paintToDo(newTodo) {
     "gap-1",
     "z-40"
   );
+
   const editBtn = document.createElement("button");
   editBtn.innerText = "Edit";
   editBtn.classList.add("border-b");
@@ -176,8 +174,6 @@ function paintToDo(newTodo) {
     input.focus();
     form.focus();
     button.blur();
-
-
   });
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "Delete";
@@ -202,11 +198,10 @@ function paintToDo(newTodo) {
     button.blur;
     input.blur;
     form.blur;
-  })
+  });
 
   button.addEventListener("click", () => {
-
-    button.focus()
+    button.focus();
   });
   button.addEventListener("focus", () => {
     select.classList.remove("hidden");
@@ -219,7 +214,7 @@ function paintToDo(newTodo) {
   button.addEventListener("blur", () => {
     setTimeout(() => {
       select.classList.add("hidden");
-    }, 10);
+    }, 1000);
   });
 
   deleteBtn.addEventListener("click", deleteToDo);
@@ -231,7 +226,7 @@ function paintToDo(newTodo) {
   li.appendChild(select);
   toDoList.appendChild(li);
 }
-
+const todoListBox = document.getElementById("todoListBox");
 function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;
@@ -244,7 +239,7 @@ function handleToDoSubmit(event) {
 
   toDos.push(newTodoObj);
   paintToDo(newTodoObj);
-
+  todoListBox.scrollTop = todoListBox.scrollHeight;
   saveToDos();
 }
 
