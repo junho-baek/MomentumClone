@@ -31,16 +31,20 @@
     <div class="flex flex-col items-center w-full h-3/5 relative">
       <div
         id="clock-box"
-        class="time flex flex-col text-white items-center max-w-sm mx-auto bg-[rgba(0,0,0,0)] mt-[9.44px] hidden font-sans"
+        class="time flex flex-col text-white items-center max-w-sm mx-auto bg-[rgba(0,0,0,0)] mt-[9.44px] hidden font-sans sm:max-w-full sm:absolute sm:top-[30%] sm:font-bold sm:w-full"
       >
         <!--       <h2 class="mx-auto text-blue-400" id="date">0000년 00월 00일</h2> -->
-        <h2 class="mx-auto text-6xl font-normal" id="clock">
+        <h2 class="mx-auto text-6xl font-normal sm:text-[168px]" id="clock">
           00:00
         </h2>
-        <h2 class="mxㅇ-auto texㅇt-6xl font-normal hidden" id="clock12">
+        <h2 class="mx-auto text-6xl font-normal hidden" id="clock12">
           00:00
         </h2>
-        <h1 id="greeting" class="hidden font-normal text-[26px]"></h1>
+
+        <h1
+          id="greeting"
+          class="hidden font-normal text-[26px] text-center sm:text-[54px] sm:max-w-lg sm:w-[80%] sm:min-w-sm sm:mx-auto"
+        ></h1>
         <button
           id="userEdit"
           class="hidden border-2 border-white/70 text-white text-sm rounded-full px-4 py-1 mt-2 flex gap-2 sm:px-5 sm:py-2 sm:mt-8 hover:shadow-inner hover:shadow-white/50 active:bg-white/60"
@@ -140,7 +144,7 @@
     >
       <div
         id="quote"
-        class="hidden flex flex-col items-center justify-around text-white"
+        class="hidden flex flex-col items-center justify-around text-white sm:absolute sm:bottom-0"
       >
         <span class="text-lg italic text-center"></span>
         <span class="text-sm"></span>
