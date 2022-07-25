@@ -79,7 +79,8 @@
       <span class="text-lg italic text-center"></span>
       <span class="text-sm"></span>
     </div>
-    <div id="todo-box" class="hidden bg-white absolute bottom-1 right-1 pr-2 pl-4 pb-4 pt-2 w-[95%] rounded-lg z-40">
+    <div id="todo-box"
+      class="hidden bg-white absolute bottom-1 right-1 pr-2 pl-4 pb-4 pt-2 w-[95%] rounded-lg z-40 max-h-[90vh]">
       <div class="relative">
         <span class="text-xl">Today</span>
         <span id="xBtn"
@@ -91,7 +92,8 @@
           </svg>
         </span>
       </div>
-      <div>
+
+      <div class="overflow-auto max-h-[80vh]">
         <ul id="todo-list" class="hidden"></ul>
       </div>
       <div>
