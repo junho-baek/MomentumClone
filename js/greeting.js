@@ -35,6 +35,10 @@ function onLoginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, username);
   clockBox.classList.remove(HIDDEN_CLASSNAME);
   logoImg.classList.add(HIDDEN_CLASSNAME);
+  if (localStorage.getItem(MAINTHING_KEY) !== null) {
+    mainFocusDiv.classList.remove(HIDDEN_CLASSNAME);
+  }
+
   // userEdit.classList.toggle(HIDDEN_CLASSNAME);
   greetingFunction(username);
 }
@@ -62,6 +66,13 @@ function editUser() {
   localStorage.removeItem(USERNAME_KEY);
   greetingBox.classList.toggle(HIDDEN_CLASSNAME);
   userEdit.classList.toggle(HIDDEN_CLASSNAME);
+
+  // toDoList1.classList.remove(HIDDEN_CLASSNAME);
+  // toDobox1.classList.remove(HIDDEN_CLASSNAME);
+  // greetingBox.classList.remove(HIDDEN_CLASSNAME);
+  quoteBox.classList.add(HIDDEN_CLASSNAME);
+  clockBox.classList.add(HIDDEN_CLASSNAME);
+  mainFocusDiv.classList.add(HIDDEN_CLASSNAME);
 }
 userEdit.addEventListener("click", editUser);
 

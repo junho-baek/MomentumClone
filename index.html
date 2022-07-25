@@ -43,11 +43,11 @@
 
         <h1
           id="greeting"
-          class="hidden font-normal text-[26px] text-center sm:text-[54px] sm:max-w-lg sm:w-[80%] sm:min-w-sm sm:mx-auto"
+          class="hidden font-normal text-[26px] text-center sm:text-[54px] sm:max-w-lg sm:w-[80%] sm:z-30 sm:min-w-sm sm:mx-auto"
         ></h1>
         <button
           id="userEdit"
-          class="hidden border-2 border-white/70 text-white text-sm rounded-full px-4 py-1 mt-2 flex gap-2 sm:px-5 sm:py-2 sm:mt-8 hover:shadow-inner hover:shadow-white/50 active:bg-white/60"
+          class="hidden border-2 border-white/70 text-white text-sm rounded-full px-4 py-1 mt-2 flex gap-2 sm:px-5 sm:py-2 sm:mt-0 sm:z-30 hover:shadow-inner hover:shadow-white/50 active:bg-white/60"
         >
           change name
         </button>
@@ -100,18 +100,18 @@
       <!-- 메인 포커스 및 투두박스 작업 -->
       <div
         id="greeting-box"
-        class="hidden relative flex flex-col justify-around item-center"
+        class="hidden relative flex flex-col justify-around item-center sm:w-full sm:h-full"
       >
-        <div id="greeting-box2">
+        <div id="greeting-box2" class="relative sm:w-full sm:h-full">
           <form
             id="mainFocusForm"
-            class="flex flex-col justify-around item-center mt-[90%]"
+            class="flex flex-col justify-around item-center mt-[90%] sm:m-0 sm:absolute sm:bottom-[-40px] sm:w-full sm:mx-auto sm:mt-12"
           >
-            <span class="text-white text-xl mx-auto text-center"
+            <span class="text-white text-xl mx-auto text-center sm:text-[35px]"
               >What is your main focus for today?</span
             >
             <input
-              class="border-b-2 border-white/90 bg-[rgba(1,1,1,0)] mx-auto w-[93%] text-white text-center text-2xl text-center"
+              class="border-b-2 border-white/90 bg-[rgba(1,1,1,0)] mx-auto w-[93%] sm:border-b-4 sm:w-[511px] sm:z-30 sm:text-[35px] text-white text-center text-2xl text-center"
               required
               type="text"
             />
@@ -121,17 +121,19 @@
 
       <div
         id="mainFocusDiv"
-        class="z-20 hidden flex flex-col justify-around item-center absolute bottom-12"
+        class="z-20 hidden flex flex-col justify-around item-center absolute bottom-12 sm:bottom-[-30px] sm:w-full sm:mx-auto"
       >
-        <span class="text-white text-xl mx-auto text-center">Today</span>
+        <span class="text-white text-xl mx-auto text-center sm:text-[17px]"
+          >Today</span
+        >
         <div
-          class="text-white text-xl mx-auto text-center w-full flex item-center justify-around"
+          class="text-white text-xl mx-auto text-center w-full flex item-center justify-center"
         >
           <input id="mainFocusCheck" type="checkbox" />
-          <span id="mainFocusSpan" class="ml-1">ajsdk</span>
+          <span id="mainFocusSpan" class="ml-1 sm:text-[35px]"></span>
           <button
             id="focusEdit"
-            class="hidden border-2 border-white/70 text-white text-sm rounded-full px-4 py-1 ml-1 flex gap-2 sm:px-5 sm:py-2 sm:mt-8 hover:shadow-inner hover:shadow-white/50 active:bg-white/60"
+            class="hidden border-2 border-white/70 text-white text-sm rounded-full px-4 py-1 ml-1 flex gap-2 sm:px-5 sm:py-2 hover:shadow-inner hover:shadow-white/50 active:bg-white/60"
           >
             edit
           </button>
@@ -144,14 +146,14 @@
     >
       <div
         id="quote"
-        class="hidden flex flex-col items-center justify-around text-white sm:absolute sm:bottom-0"
+        class="hidden flex flex-col items-center justify-around text-white sm:pr-8 sm:absolute sm:bottom-0 sm:w-full"
       >
         <span class="text-lg italic text-center"></span>
         <span class="text-sm"></span>
       </div>
       <div
         id="todo-box"
-        class="hidden bg-white absolute bottom-1 right-1 pr-2 pl-4 pb-4 pt-2 w-[95%] rounded-lg z-40 max-h-[90vh]"
+        class="hidden bg-white absolute bottom-1 right-1 pr-2 pl-4 pb-4 pt-2 w-[95%] sm:w-[320px] sm:bottom-12 rounded-lg z-40 max-h-[90vh]"
       >
         <div class="relative">
           <span class="text-xl">Today</span>

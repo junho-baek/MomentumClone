@@ -47,7 +47,7 @@ function completeToDo(event) {
   const input = form.querySelector("input");
   // const checkBox = li.querySelector("input");
 
-  if (event.target.checked === true) {
+  if (event.target.checked == true) {
     const completeTodo = input.value;
     const completeTodoObj = {
       text: completeTodo,
@@ -75,7 +75,8 @@ function paintMiddleLine(comTodo) {
   const form = li.querySelector("form");
   const input = form.querySelector("input");
   const checkBox = li.querySelector("input");
-  if (checkBox.checked === true) {
+  checkBox.checked = true;
+  if (checkBox.checked == true) {
     input.classList.add("line-through");
   } else {
     input.classList.remove("line-through");
@@ -100,7 +101,7 @@ function editTodos(event) {
     id: parseInt(li.id)
   };
   toDos.splice(toDos.indexOf(a[0]), 1, completeTodoObj);
-  if (checkBox.checked === true) {
+  if (checkBox.checked == true) {
     completeDos.splice(completeDos.indexOf(b[0]), 1, completeTodoObj);
     saveCompleteToDos();
   }

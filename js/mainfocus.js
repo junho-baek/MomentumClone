@@ -46,9 +46,13 @@ function checkLocalMainFocus() {
     mainFocusForm.addEventListener("submit", showMainFocusDiv);
   } else {
     greetingBox2.classList.add("hidden");
-    mainFocusDiv.classList.remove("hidden");
+    if (localStorage.getItem(USERNAME_KEY) !== null) {
+      mainFocusDiv.classList.remove("hidden");
+    }
+
     writeMainFocus(localStorage.getItem(MAINTHING_KEY));
     checkCheked();
+    checkMainThing();
   }
 }
 checkLocalMainFocus();
