@@ -40,3 +40,16 @@ clock12.addEventListener("click", () => {
   clock.classList.toggle("hidden");
   clock12.classList.toggle("hidden");
 });
+
+clock.addEventListener("mouseenter", () => {
+  clock.classList.toggle("animate-bounce");
+});
+clock.addEventListener("mouseleave", () => {
+  clock.classList.toggle("animate-bounce");
+});
+clock12.addEventListener("mouseenter", () => {
+  clock12.classList.toggle("animate-bounce");
+});
+clock12.addEventListener("mouseleave", () => {
+  clock12.classList.toggle("animate-bounce");
+});
