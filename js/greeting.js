@@ -1,7 +1,7 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector("#greeting");
-
+const weatherBox = document.getElementById("weather");
 const greetingBox = document.querySelector("#greeting-box");
 const userEdit = document.getElementById("userEdit");
 
@@ -23,6 +23,7 @@ const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
   event.preventDefault();
+  weatherBox.classList.remove(HIDDEN_CLASSNAME);
   loginForm.classList.add(HIDDEN_CLASSNAME);
   toDoForm1.classList.remove(HIDDEN_CLASSNAME);
   toDoInput1.classList.remove(HIDDEN_CLASSNAME);
@@ -104,4 +105,5 @@ if (localStorage.getItem(USERNAME_KEY) === null) {
   clockBox.classList.remove(HIDDEN_CLASSNAME);
   logoImg.classList.add(HIDDEN_CLASSNAME);
   todoBtn.classList.remove(HIDDEN_CLASSNAME);
+  weatherBox.classList.remove(HIDDEN_CLASSNAME);
 }
